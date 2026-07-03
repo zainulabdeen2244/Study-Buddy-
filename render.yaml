@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: study-buddy
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 7860
+      - key: FORGE_VIDEO_RAG_REAL_PROVIDERS
+        value: false

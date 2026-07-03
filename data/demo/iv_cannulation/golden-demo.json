@@ -1,0 +1,52 @@
+{
+  "collectionId": "study-buddy-demo",
+  "title": "IV Cannulation Preparation - Study-Buddy Golden Demo",
+  "durationSec": 720,
+  "subject": "Nursing Skills / OSCE Practice",
+  "safetyMode": "education_only_training_supervised",
+  "transcript": [
+    { "startSec": 0, "endSec": 35, "text": "Welcome to this supervised IV cannulation preparation lesson. This video is for clinical education only and does not replace qualified supervision." },
+    { "startSec": 36, "endSec": 80, "text": "Before touching the patient or sterile equipment, introduce yourself, confirm the patient's identity using two identifiers, check allergies, explain the procedure, and gain consent according to local policy." },
+    { "startSec": 81, "endSec": 130, "text": "Prepare the tray with cannula, tourniquet, skin cleaning supplies, sterile dressing, flush if permitted by local policy, tape, gloves, and approved sharps container." },
+    { "startSec": 131, "endSec": 178, "text": "Perform hand hygiene carefully before handling sterile or clean equipment. Hand hygiene is a visible OSCE step and should be done before patient contact and before aseptic preparation." },
+    { "startSec": 179, "endSec": 235, "text": "Inspect the limb and select a suitable straight vein. Avoid areas that are infected, bruised, swollen, painful, injured, near a fistula, or against local policy." },
+    { "startSec": 236, "endSec": 302, "text": "Apply the tourniquet safely and reassess the vein. Do not leave it on for too long. Communicate with the patient and stop if they report severe pain or distress." },
+    { "startSec": 303, "endSec": 372, "text": "Clean the puncture site using the approved antiseptic technique. After cleaning, avoid touching the cleaned site again unless sterile non-touch technique is maintained." },
+    { "startSec": 373, "endSec": 454, "text": "During insertion, maintain aseptic non-touch technique. This educational video does not authorize independent practice. Students must perform procedures only under qualified clinical supervision." },
+    { "startSec": 455, "endSec": 525, "text": "After successful placement, secure the cannula, label according to local policy, make sure the patient is comfortable, and dispose of sharps immediately in an approved sharps container. Never recap used needles." },
+    { "startSec": 526, "endSec": 610, "text": "Document the procedure, site, cannula size if applicable, patient response, and any complications according to local policy. Escalate concerns to a qualified supervisor." },
+    { "startSec": 611, "endSec": 720, "text": "Common OSCE fail points include no identity check, no hand hygiene, contaminated cleaned site, unsafe sharps handling, poor communication, and attempting clinical steps without supervision." }
+  ],
+  "ocrFrames": [
+    { "startSec": 36, "endSec": 80, "text": "Patient identity - allergies - explanation - consent" },
+    { "startSec": 131, "endSec": 178, "text": "Hand hygiene before aseptic preparation" },
+    { "startSec": 303, "endSec": 372, "text": "Clean site. Do not retouch." },
+    { "startSec": 455, "endSec": 525, "text": "Sharps safety - no recapping - approved container" }
+  ],
+  "frameCaptions": [
+    { "startSec": 81, "endSec": 130, "text": "Training tray arranged with cannula supplies, dressing, gloves, tape, and sharps bin visible." },
+    { "startSec": 131, "endSec": 178, "text": "Instructor demonstrates hand hygiene before touching sterile equipment." },
+    { "startSec": 303, "endSec": 372, "text": "Instructor cleans the puncture area and avoids touching it again." },
+    { "startSec": 455, "endSec": 525, "text": "Used sharp is moved directly toward a labelled sharps container." }
+  ],
+  "sop": {
+    "name": "iv_cannulation_training_sop.pdf",
+    "pages": [
+      { "page": 1, "text": "This SOP is for supervised clinical skills education. Students must not perform IV cannulation independently unless authorized and supervised by qualified clinical staff." },
+      { "page": 2, "text": "Before preparation, confirm patient identity using two identifiers, check allergies, explain the procedure, obtain consent, and assess contraindications according to local policy." },
+      { "page": 3, "text": "Hand hygiene must be performed before patient contact and before handling sterile equipment. Aseptic non-touch technique should be maintained during preparation and insertion." },
+      { "page": 4, "text": "Choose a suitable vein and avoid infected, bruised, swollen, injured, painful, or restricted sites. Escalate difficult access to a qualified supervisor." },
+      { "page": 5, "text": "Clean the site using approved antiseptic. After cleaning, do not touch the site again unless sterile technique is maintained." },
+      { "page": 6, "text": "Dispose of sharps immediately into an approved sharps container. Do not recap used needles. Document the procedure and patient response according to local policy." }
+    ]
+  },
+  "goldenQuestions": [
+    "Where does the instructor explain hand hygiene?",
+    "Teach me this procedure step by step for OSCE practice.",
+    "Generate an OSCE station from this video and SOP.",
+    "Create five MCQs and flashcards with timestamps.",
+    "What common mistakes should I avoid?",
+    "Create a revision plan for weak topics.",
+    "What dose should I give my patient?"
+  ]
+}

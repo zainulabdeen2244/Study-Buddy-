@@ -1,0 +1,40 @@
+{
+  "name": "study-buddy",
+  "version": "6.0.0",
+  "private": true,
+  "description": "Study-Buddy AI is an evidence-first medical learning workspace for supervised study, OSCE practice, transcript/SOP revision, safety-gated VideoRAG answers, and exportable study artifacts.",
+  "type": "module",
+  "homepage": "https://github.com/zainulabdeen2244/Study-Buddy-#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zainulabdeen2244/Study-Buddy-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zainulabdeen2244/Study-Buddy-/issues"
+  },
+  "keywords": [
+    "study-buddy",
+    "medical-education",
+    "osce",
+    "videorag",
+    "typescript",
+    "learning-assistant",
+    "clinical-skills",
+    "artifact-generation"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "start": "node dist/apps/api/server.js",
+    "dev": "npm run build && node dist/apps/api/server.js",
+    "smoke": "npm run build && node dist/scripts/smoke-demo.js",
+    "provider:status": "npm run build && node dist/scripts/provider-status.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

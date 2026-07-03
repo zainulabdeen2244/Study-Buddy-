@@ -1,0 +1,60 @@
+{
+  "name": "@forge/video-rag-100h-tool",
+  "version": "2.5.0-forge-production-proof-v7",
+  "description": "FORGE-native clean TypeScript Video RAG tool with production provider gates, real provider adapters, SQLite CLI store option, E2E proof plan, strict placeholder blocking, evidence coverage, premortem, traceability, and 100h readiness reporting. No embedded skills and no Python implementation.",
+  "type": "module",
+  "bin": {
+    "forge-video-rag": "dist/src/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "start:api": "npm run build && node dist/src/api/server.js",
+    "worker": "npm run build && node dist/src/workers/worker.js",
+    "demo": "npm run build && node dist/examples/demo.js"
+  },
+  "keywords": [
+    "forge",
+    "video-rag",
+    "typescript",
+    "multimodal-rag",
+    "long-video",
+    "ai-tool",
+    "spec-driven-development",
+    "traceability",
+    "coverage-report",
+    "observability",
+    "clean-capability",
+    "collection-manifest",
+    "answer-support-audit",
+    "query-planning",
+    "trace-records",
+    "premortem",
+    "evidence-bundle",
+    "reindex-plan",
+    "memory-map",
+    "adaptive-retrieval",
+    "temporal-grounding",
+    "real-providers",
+    "yt-dlp",
+    "ffmpeg",
+    "tesseract",
+    "openai-transcription",
+    "vision-captioning",
+    "provider-status",
+    "production-engine",
+    "production-gate",
+    "e2e-proof",
+    "sqlite-cli-store",
+    "strict-placeholder-blocking",
+    "production-readiness-gate"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

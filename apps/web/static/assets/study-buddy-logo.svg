@@ -1,0 +1,16 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Study-Buddy">
+  <rect width="120" height="120" rx="28" fill="#101069"/>
+  <path d="M59 18a42 42 0 0 1 42 42h-23a19 19 0 0 0-19-19V18Z" fill="#1B157E"/>
+  <path d="M59 18a42 42 0 0 0-42 42h23a19 19 0 0 1 19-19V18Z" fill="#5AD3DE"/>
+  <path d="M60 102a42 42 0 0 1-42-42h23a19 19 0 0 0 19 19v23Z" fill="#1B157E"/>
+  <path d="M60 102a42 42 0 0 0 42-42H79a19 19 0 0 1-19 19v23Z" fill="#1B157E"/>
+  <path d="M18 60h23v19H22a22 22 0 0 1-4-19Z" fill="#2D58FF"/>
+  <path d="M79 60h23a22 22 0 0 1-4 19H79V60Z" fill="#5AD3DE"/>
+  <path d="M41 60a19 19 0 0 1 19-19h19v19H41Z" fill="white"/>
+  <path d="M41 79h19a19 19 0 0 0 19-19H41v19Z" fill="white"/>
+  <path d="M60 41a19 19 0 0 1 19 19v19H60V41Z" fill="#2D58FF"/>
+  <path d="M60 79a19 19 0 0 1-19-19V41h19v38Z" fill="white"/>
+  <path d="M88 86l8 8 18-20" stroke="#27D28B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="144" y="75" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="500" fill="#242187">Study-Buddy</text>
+  <text x="348" y="75" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="500" fill="#20BDEB">AI</text>
+</svg>

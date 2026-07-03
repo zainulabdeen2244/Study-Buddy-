@@ -1,0 +1,182 @@
+{
+  "ok": true,
+  "sessionId": "verify1",
+  "collectionId": "study-buddy-demo",
+  "route": {
+    "intent": "RESEARCH_STUDENT_PAIN",
+    "riskLevel": "low",
+    "blocked": false,
+    "requiredTools": [
+      "hn.algolia.search_by_date",
+      "last30days.skill.plan",
+      "study-buddy.safetyGate"
+    ],
+    "requiredAgents": [
+      "RouterAgent",
+      "VideoEvidenceAgent",
+      "DocumentRagAgent",
+      "AnswerComposerAgent",
+      "SafetyReviewerAgent",
+      "RequestOrchestrator",
+      "RecentPainPointResearchAgent"
+    ],
+    "needsVideoRag": false,
+    "needsDocumentRag": false,
+    "needsSafetyReview": true
+  },
+  "orchestratorPlan": {
+    "intent": "research_articles",
+    "confidence": 0.73,
+    "reasoning": "Deterministic planner: Research Synthesis Playbook selected.",
+    "searchQuery": "Loop Engineering",
+    "needsClinicalVideoRag": false,
+    "needsResearch": true,
+    "needsArtifact": false,
+    "tools": [
+      "hn.algolia.search_by_date",
+      "last30days.skill.plan"
+    ],
+    "playbook": "Research Synthesis Playbook",
+    "agents": [
+      "RequestOrchestrator",
+      "ArticleSearchAgent",
+      "BiomedicalResearchAgent",
+      "DeepResearchAnalyst",
+      "SafetyReviewerAgent"
+    ],
+    "isMultiSource": false
+  },
+  "answer": "### Direct Answer\nLoop Engineering refers to the practice of designing and optimizing loops—iterative processes or cycles—in software systems, particularly in the context of coding agents and AI workflows. It involves creating efficient, effective loops that manage repeated tasks, maintain context, and improve performance in automated or agentic systems.\n\n### Key Observations\n- Loop Engineering is discussed primarily in the context of AI agents and coding automation, where loops handle repeated tasks or iterative problem-solving.\n- Effective loop design can significantly reduce computational overhead, such as cutting down token usage in language model tasks by avoiding repeated context.\n- The concept is gaining attention in developer communities focused on AI and automation, with discussions on best practices for loop design to improve agentic task performance.\n- Resources include blog posts and community discussions that explore practical approaches to loop design, including prompt engineering for coding agents.\n\n### Sources (with engagement context)\n1. **\"Loop Engineering: Designing loops that prompt coding agents\"** (10 points, 6 comments) — Well-received by the community, this source provides practical insights into designing loops for coding agents.  \n   [Link](https://addyosmani.com/blog/loop-engineering/)\n\n2. **\"The Art of Loop Engineering\"** (2 points, 1 comment) — Recently shared, this blog post discusses the conceptual and practical aspects of loop engineering in AI workflows.  \n   [Link](https://www.langchain.com/blog/the-art-of-loop-engineering)\n\n3. **\"Loop Engineering\" on Substack** (1 point, 0 comments) — Newly posted, offers additional perspectives on loop design principles.  \n   [Link](https://addyo.substack.com/p/loop-engineering)\n\n### Summary\nLoop Engineering is an emerging focus area in AI and software development communities, emphasizing the design of iterative processes that optimize task execution in coding agents and automated workflows. It involves strategies to reduce redundancy, manage context efficiently, and improve overall system performance. Recent community discussions and blog posts provide practical guidance and conceptual frameworks for implementing effective loops in AI-driven environments.\n\n## Citations\n1. Show HN: I revived yuiblog.com, Yahoo's defunct front end engineering blog — http://derek.io/yuiblog/page/101/\n2. Show HN: We cut >60% of tokens from agentic tasks by removing repeated context — https://parcle.ai/\n3. The Art of Loop Engineering — https://www.langchain.com/blog/the-art-of-loop-engineering\n4. Loop Engineering — https://addyo.substack.com/p/loop-engineering\n5. Loop Engineering: Designing loops that prompt coding agents — https://addyosmani.com/blog/loop-engineering/\n6. Show HN: MicroECS – entity component system library in Python/NumPy — https://github.com/Meehai/microecs\n7. AI is eating the AI Engineering Loop — https://twitter.com/lotte_verheyden/status/2064415370761646410\n\n_Sources: last30days research engine · Study-Buddy · For academic use only._",
+  "safetyAudit": {
+    "decision": "approved_with_warning",
+    "riskLevel": "low",
+    "unsafeClaims": [],
+    "missingEvidence": [
+      "VideoRAG answer is insufficiently supported.",
+      "No timestamped citations were returned."
+    ],
+    "requiredRevisions": [
+      "Use insufficient-evidence wording and ask for more uploaded material if needed."
+    ],
+    "finalSafetyNote": "Training-only: Study-Buddy explains uploaded learning material for supervised education and OSCE practice. It is not a diagnosis, prescription, emergency, or independent clinical-procedure tool.",
+    "evidenceGate": {
+      "minimumCitations": 1,
+      "actualCitations": 0,
+      "passed": false
+    }
+  },
+  "agentTrace": [
+    {
+      "id": "agent_9ac34a5d872bf3f5",
+      "agent": "ConversationMemoryAgent",
+      "action": "recall tri-layer context",
+      "inputSummary": "tell me about Loop Engineering",
+      "outputSummary": "episodic=6 semantic=2 procedural=0",
+      "status": "succeeded",
+      "durationMs": 6,
+      "tools": [
+        "cognition.memory.recall"
+      ]
+    },
+    {
+      "id": "agent_fa1cf212ff4df598",
+      "agent": "RequestOrchestrator",
+      "action": "plan tools",
+      "inputSummary": "tell me about Loop Engineering",
+      "outputSummary": "intent=research_articles playbook=\"Research Synthesis Playbook\" confidence=0.73 tools=hn.algolia.search_by_date,last30days.skill.plan multiSource=false",
+      "status": "succeeded",
+      "durationMs": 11,
+      "tools": [
+        "study-buddy.llmPlanner"
+      ]
+    },
+    {
+      "id": "agent_b01f1e114e7354a5",
+      "agent": "RouterAgent",
+      "action": "classify",
+      "inputSummary": "tell me about Loop Engineering",
+      "outputSummary": "RESEARCH_STUDENT_PAIN / low / blocked=false",
+      "status": "succeeded",
+      "durationMs": 12,
+      "tools": [
+        "study-buddy.riskClassifier"
+      ]
+    },
+    {
+      "id": "agent_de96e0cb612c3eb9",
+      "agent": "RecentPainPointResearchAgent",
+      "action": "route research request",
+      "inputSummary": "tell me about Loop Engineering",
+      "outputSummary": "playbook=\"Research Synthesis Playbook\" intent=\"research_articles\" multi=false tools=hn.algolia.search_by_date,last30days.skill.plan",
+      "status": "succeeded",
+      "durationMs": 0,
+      "tools": [
+        "last30days.skill.plan",
+        "study-buddy.safetyGate"
+      ]
+    },
+    {
+      "id": "agent_567f2b51eb1fd508",
+      "agent": "ArticleSearchAgent",
+      "action": "search recent articles",
+      "inputSummary": "tell me about Loop Engineering",
+      "outputSummary": "7 HN stories (2575ms)",
+      "status": "succeeded",
+      "durationMs": 10697,
+      "tools": [
+        "hn.algolia.search_by_date",
+        "last30days.skill.plan"
+      ]
+    }
+  ],
+  "premortem": [
+    {
+      "id": "pre_0ff567f69ea64cdc",
+      "createdAt": "2026-06-18T08:38:20.232Z",
+      "status": "recorded",
+      "module": "Ask Pipeline",
+      "stage": "route question",
+      "likelyFailures": [
+        "Evidence can be missing, stale, or unsupported.",
+        "Medical answer can drift into diagnosis, dosage, or patient-specific treatment.",
+        "UI can look impressive while backend proof is weak.",
+        "Provider keys or native binaries can be unavailable during live deployment."
+      ],
+      "mitigations": [
+        "Run evidence-first retrieval and fail closed when support is low.",
+        "Route every output through Study-Buddy medical safety gate.",
+        "Expose VideoRAG audit, coverage, memory map, provider status, and production gate.",
+        "Keep golden demo, transcript ingest, and deterministic fallback active without API keys."
+      ]
+    },
+    {
+      "id": "pre_197a26d6c0ae8d6f",
+      "createdAt": "2026-06-18T08:38:20.236Z",
+      "status": "recorded",
+      "module": "Ask Pipeline",
+      "stage": "retrieve evidence",
+      "likelyFailures": [
+        "Evidence can be missing, stale, or unsupported.",
+        "Medical answer can drift into diagnosis, dosage, or patient-specific treatment.",
+        "UI can look impressive while backend proof is weak.",
+        "Provider keys or native binaries can be unavailable during live deployment."
+      ],
+      "mitigations": [
+        "Run evidence-first retrieval and fail closed when support is low.",
+        "Route every output through Study-Buddy medical safety gate.",
+        "Expose VideoRAG audit, coverage, memory map, provider status, and production gate.",
+        "Keep golden demo, transcript ingest, and deterministic fallback active without API keys."
+      ]
+    }
+  ],
+  "ops": {
+    "memory": {
+      "sessions": 1,
+      "episodicTurns": 2,
+      "semanticNodes": 2,
+      "proceduralWorkflows": 1,
+      "avgImportance": "0.82",
+      "updatedAt": "2026-06-18T08:38:30.950Z"
+    }
+  }
+}

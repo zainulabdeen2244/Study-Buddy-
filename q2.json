@@ -1,0 +1,182 @@
+{
+  "ok": true,
+  "sessionId": "verify2",
+  "collectionId": "study-buddy-demo",
+  "route": {
+    "intent": "RESEARCH_STUDENT_PAIN",
+    "riskLevel": "low",
+    "blocked": false,
+    "requiredTools": [
+      "hn.algolia.search_by_date",
+      "last30days.skill.plan",
+      "study-buddy.safetyGate"
+    ],
+    "requiredAgents": [
+      "RouterAgent",
+      "VideoEvidenceAgent",
+      "DocumentRagAgent",
+      "AnswerComposerAgent",
+      "SafetyReviewerAgent",
+      "RequestOrchestrator",
+      "RecentPainPointResearchAgent"
+    ],
+    "needsVideoRag": false,
+    "needsDocumentRag": false,
+    "needsSafetyReview": true
+  },
+  "orchestratorPlan": {
+    "intent": "research_articles",
+    "confidence": 0.73,
+    "reasoning": "Deterministic planner: Research Synthesis Playbook selected.",
+    "searchQuery": "find best for Agentic AI AI Agents",
+    "needsClinicalVideoRag": false,
+    "needsResearch": true,
+    "needsArtifact": false,
+    "tools": [
+      "hn.algolia.search_by_date",
+      "last30days.skill.plan"
+    ],
+    "playbook": "Research Synthesis Playbook",
+    "agents": [
+      "RequestOrchestrator",
+      "ArticleSearchAgent",
+      "BiomedicalResearchAgent",
+      "DeepResearchAnalyst",
+      "SafetyReviewerAgent"
+    ],
+    "isMultiSource": false
+  },
+  "answer": "**Direct Answer:**  \nNo recent community discussions or sources were found in the last 30 days specifically addressing the \"best for Agentic AI AI Agents.\" \n\n**Key Observations:**  \n- Agentic AI refers to AI systems capable of autonomous decision-making and goal-directed behavior.  \n- AI agents are software entities that perceive their environment and act upon it to achieve specific objectives.  \n- The concept of \"best\" for Agentic AI agents typically involves criteria such as autonomy, adaptability, learning capability, and ethical alignment.  \n- Recent research and discussions often focus on frameworks, architectures, and safety measures for agentic AI but no standout recent community consensus or resources surfaced in the last month.\n\n**Sources:**  \n- No relevant recent sources with significant community engagement were retrieved for this query.\n\n**Summary:**  \nCurrently, there are no newly shared or well-received resources from the last 30 days specifically highlighting the best approaches or tools for Agentic AI agents. For foundational understanding, general AI agent literature and autonomous system design principles remain the primary references.\n\n## Note\nNo indexed sources found in last 30 days. Answer is from general knowledge.\n\n_Sources: last30days research engine · Study-Buddy · For academic use only._",
+  "safetyAudit": {
+    "decision": "approved_with_warning",
+    "riskLevel": "low",
+    "unsafeClaims": [],
+    "missingEvidence": [
+      "VideoRAG answer is insufficiently supported.",
+      "No timestamped citations were returned."
+    ],
+    "requiredRevisions": [
+      "Use insufficient-evidence wording and ask for more uploaded material if needed."
+    ],
+    "finalSafetyNote": "Training-only: Study-Buddy explains uploaded learning material for supervised education and OSCE practice. It is not a diagnosis, prescription, emergency, or independent clinical-procedure tool.",
+    "evidenceGate": {
+      "minimumCitations": 1,
+      "actualCitations": 0,
+      "passed": false
+    }
+  },
+  "agentTrace": [
+    {
+      "id": "agent_206abfb24158f83a",
+      "agent": "ConversationMemoryAgent",
+      "action": "recall tri-layer context",
+      "inputSummary": "find the best Resources for Agentic AI And AI Agents",
+      "outputSummary": "episodic=6 semantic=2 procedural=0",
+      "status": "succeeded",
+      "durationMs": 3,
+      "tools": [
+        "cognition.memory.recall"
+      ]
+    },
+    {
+      "id": "agent_03162b7d9ab1d667",
+      "agent": "RequestOrchestrator",
+      "action": "plan tools",
+      "inputSummary": "find the best Resources for Agentic AI And AI Agents",
+      "outputSummary": "intent=research_articles playbook=\"Research Synthesis Playbook\" confidence=0.73 tools=hn.algolia.search_by_date,last30days.skill.plan multiSource=false",
+      "status": "succeeded",
+      "durationMs": 5,
+      "tools": [
+        "study-buddy.llmPlanner"
+      ]
+    },
+    {
+      "id": "agent_3f9cb172893434c9",
+      "agent": "RouterAgent",
+      "action": "classify",
+      "inputSummary": "find the best Resources for Agentic AI And AI Agents",
+      "outputSummary": "RESEARCH_STUDENT_PAIN / low / blocked=false",
+      "status": "succeeded",
+      "durationMs": 6,
+      "tools": [
+        "study-buddy.riskClassifier"
+      ]
+    },
+    {
+      "id": "agent_660216c6e96d392a",
+      "agent": "RecentPainPointResearchAgent",
+      "action": "route research request",
+      "inputSummary": "find the best Resources for Agentic AI And AI Agents",
+      "outputSummary": "playbook=\"Research Synthesis Playbook\" intent=\"research_articles\" multi=false tools=hn.algolia.search_by_date,last30days.skill.plan",
+      "status": "succeeded",
+      "durationMs": 0,
+      "tools": [
+        "last30days.skill.plan",
+        "study-buddy.safetyGate"
+      ]
+    },
+    {
+      "id": "agent_65598290f9220afc",
+      "agent": "ArticleSearchAgent",
+      "action": "search recent articles",
+      "inputSummary": "find the best Resources for Agentic AI And AI Agents",
+      "outputSummary": "0 HN stories (8003ms)",
+      "status": "warning",
+      "durationMs": 12727,
+      "tools": [
+        "hn.algolia.search_by_date",
+        "last30days.skill.plan"
+      ]
+    }
+  ],
+  "premortem": [
+    {
+      "id": "pre_4f2ae75985ea9971",
+      "createdAt": "2026-06-18T08:38:45.318Z",
+      "status": "recorded",
+      "module": "Ask Pipeline",
+      "stage": "route question",
+      "likelyFailures": [
+        "Evidence can be missing, stale, or unsupported.",
+        "Medical answer can drift into diagnosis, dosage, or patient-specific treatment.",
+        "UI can look impressive while backend proof is weak.",
+        "Provider keys or native binaries can be unavailable during live deployment."
+      ],
+      "mitigations": [
+        "Run evidence-first retrieval and fail closed when support is low.",
+        "Route every output through Study-Buddy medical safety gate.",
+        "Expose VideoRAG audit, coverage, memory map, provider status, and production gate.",
+        "Keep golden demo, transcript ingest, and deterministic fallback active without API keys."
+      ]
+    },
+    {
+      "id": "pre_27d3257de18b7745",
+      "createdAt": "2026-06-18T08:38:45.319Z",
+      "status": "recorded",
+      "module": "Ask Pipeline",
+      "stage": "retrieve evidence",
+      "likelyFailures": [
+        "Evidence can be missing, stale, or unsupported.",
+        "Medical answer can drift into diagnosis, dosage, or patient-specific treatment.",
+        "UI can look impressive while backend proof is weak.",
+        "Provider keys or native binaries can be unavailable during live deployment."
+      ],
+      "mitigations": [
+        "Run evidence-first retrieval and fail closed when support is low.",
+        "Route every output through Study-Buddy medical safety gate.",
+        "Expose VideoRAG audit, coverage, memory map, provider status, and production gate.",
+        "Keep golden demo, transcript ingest, and deterministic fallback active without API keys."
+      ]
+    }
+  ],
+  "ops": {
+    "memory": {
+      "sessions": 1,
+      "episodicTurns": 2,
+      "semanticNodes": 2,
+      "proceduralWorkflows": 1,
+      "avgImportance": "0.78",
+      "updatedAt": "2026-06-18T08:38:58.055Z"
+    }
+  }
+}

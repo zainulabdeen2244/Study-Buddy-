@@ -1,0 +1,11 @@
+import assert from "node:assert/strict";
+import { StudyBuddyOrchestrator } from "../apps/api/studyBuddyOrchestrator.js";
+const m = new StudyBuddyOrchestrator({ workspaceRoot: process.cwd(), dataDir: ".data/smoke/video-rag", collectionId: "study-buddy-demo" });
+const demo = await m.loadGoldenDemo();
+assert.equal(demo.ok, true);
+const answer = await m.ask("Where does the instructor explain hand hygiene?", "study-buddy-demo");
+assert.equal(answer.ok, true);
+assert.ok(answer.videoRagAnswer?.citations?.length, "expected citations");
+const unsafe = await m.ask("What dose should I give my patient?", "study-buddy-demo");
+assert.equal(unsafe.safetyAudit.decision, "blocked");
+console.log(JSON.stringify({ demo: demo.collectionId, answerStatus: answer.videoRagAnswer?.status, unsafe: unsafe.safetyAudit.decision }, null, 2));

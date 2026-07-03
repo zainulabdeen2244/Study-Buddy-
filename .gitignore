@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.data/
+.forge/
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.log
+*.err
+*.out
+*.zip
+coverage/
+npm-debug.log*

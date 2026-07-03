@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Study-Buddy</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div class="depth-scene" aria-hidden="true">
+    <div class="depth-plane plane-one"></div>
+    <div class="depth-plane plane-two"></div>
+  </div>
+
+  <main class="claude-shell" id="layout">
+    <aside class="sidebar" aria-label="Study-Buddy navigation">
+      <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Minimize sidebar" title="Minimize sidebar">
+        <span></span>
+      </button>
+      <a class="workspace-switcher" href="/" aria-label="Study-Buddy home">
+        <span class="workspace-icon"><img src="/assets/study-buddy-logo.svg" alt="" /></span>
+        <span class="workspace-copy">
+          <b>Study-Buddy</b>
+          <small>Clinical workspace</small>
+        </span>
+        <span class="workspace-chevrons" aria-hidden="true"></span>
+      </a>
+
+      <nav class="sidebar-nav" id="sidebarNav" aria-label="Primary"></nav>
+
+      <section class="side-section projects-section">
+        <div class="side-heading">
+          <h2>Projects</h2>
+          <button class="text-btn" id="clearHistoryBtn" type="button">Clear</button>
+        </div>
+        <div class="chat-history" id="chatHistory"></div>
+      </section>
+
+      <section class="side-section skills-section">
+        <div class="side-heading">
+          <h2>Skills</h2>
+          <span class="pill" id="skillCount">0 on</span>
+        </div>
+        <div class="skills-list" id="skillsList"></div>
+      </section>
+
+      <section class="side-section settings-section" id="settingsPanel">
+        <h2>Settings</h2>
+        <label class="setting-row">
+          <span>Dark mode</span>
+          <input id="darkModeToggle" type="checkbox" />
+        </label>
+        <label class="setting-row">
+          <span>Extended thinking</span>
+          <input id="extendedThinkingToggle" type="checkbox" checked />
+        </label>
+        <label class="setting-row stacked">
+          <span>Thinking pace</span>
+          <select id="thinkingPace">
+            <option value="2200">Balanced</option>
+            <option value="3600">Deeper</option>
+            <option value="1200">Fast</option>
+          </select>
+        </label>
+      </section>
+
+      <div class="sidebar-user">
+        <span class="user-avatar">M</span>
+        <span class="user-copy">
+          <b>Study-Buddy</b>
+          <small>Local session</small>
+        </span>
+        <span class="workspace-chevrons" aria-hidden="true"></span>
+      </div>
+    </aside>
+
+    <section class="chat-main" aria-label="Study-Buddy chat">
+      <header class="chat-header">
+        <div>
+          <p class="eyebrow">Study-Buddy workspace</p>
+          <h1 id="chatTitle">New chat</h1>
+        </div>
+        <button class="files-button" id="toggleArtifactsBtn" type="button" aria-label="Show files">
+          <span class="file-icon"></span>
+          <span class="files-label">Files</span>
+          <b id="artifactCount">0</b>
+        </button>
+      </header>
+
+      <div class="conversation" id="conversation" aria-live="polite"></div>
+
+      <div class="composer-wrap">
+        <div class="skill-strip" id="activeSkillStrip"></div>
+        <div class="attachment-strip" id="attachmentStrip"></div>
+        <form class="composer" id="dockForm">
+          <button class="attach-btn" id="attachBtn" type="button" aria-label="Attach files" title="Attach files">
+            <span aria-hidden="true"></span>
+          </button>
+          <input id="fileInput" type="file" multiple hidden />
+          <textarea id="dockPrompt" rows="2" placeholder="Message Study-Buddy..."></textarea>
+          <button class="send" type="submit" aria-label="Send message">
+            <span class="send-label">Send</span>
+            <span class="send-icon" aria-hidden="true"></span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <aside class="artifact-drawer" id="artifactDrawer" aria-label="Artifacts">
+      <div class="drawer-head">
+        <div>
+          <p class="eyebrow">Files</p>
+          <h2>Artifacts</h2>
+        </div>
+        <button class="ghost compact" id="makeArtifact" type="button">Create</button>
+      </div>
+      <select id="artifactKind" aria-label="Artifact kind">
+        <option value="docx">DOCX research brief</option>
+        <option value="pdf">PDF study pack</option>
+        <option value="pptx">PowerPoint deck</option>
+        <option value="chart">Learning chart</option>
+        <option value="study-pack">Complete study pack</option>
+      </select>
+      <input id="artifactTitle" value="Study-Buddy Research Brief" aria-label="Artifact title" />
+      <textarea id="artifactPrompt" rows="3" aria-label="Artifact prompt">Use the latest Study-Buddy answer. Add resources at the end and keep the document clean.</textarea>
+      <div class="artifact-list" id="artifactList"></div>
+    </aside>
+  </main>
+
+  <div class="hidden-tools">
+    <form id="heroForm"><textarea id="heroPrompt">Find the best trending GitHub repositories about agentic AI agents and explain the use cases, then create a DOCX with resources at the end.</textarea></form>
+    <div id="miniStatus"></div>
+    <div id="evidenceBox"></div>
+    <div id="safetyBox"></div>
+    <pre id="statusBox"></pre>
+    <pre id="providerBox"></pre>
+    <pre id="gateBox"></pre>
+    <pre id="premortemBox"></pre>
+    <input id="customTitle" value="Uploaded Clinical Learning Session" />
+    <textarea id="transcriptText"></textarea>
+    <textarea id="documentText"></textarea>
+    <input id="videoUri" />
+    <select id="sourceType"><option value="local">Local file</option><option value="youtube">YouTube</option><option value="remote">Remote URL</option></select>
+    <button id="ingestBtn" type="button">Build index</button>
+    <button id="videoPlanBtn" type="button">Check providers</button>
+    <pre id="ingestBox"></pre>
+    <div id="skillGrid"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
