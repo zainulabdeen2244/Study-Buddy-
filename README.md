@@ -1,6 +1,6 @@
 # Study-Buddy AI
 
-Study-Buddy AI is a TypeScript medical-learning workspace for supervised study, OSCE practice, transcript/SOP revision, timestamped VideoRAG answers, quizzes, flashcards, revision plans, and exportable study artifacts.
+Study-Buddy AI is a TypeScript learning workspace for supervised study, OSCE practice, transcript/SOP revision, timestamped VideoRAG answers, quizzes, flashcards, revision plans, and exportable study artifacts.
 
 It is not a doctor, diagnosis tool, prescription tool, emergency tool, or independent clinical procedure assistant. It is designed for education-only use with uploaded or demo learning material.
 
