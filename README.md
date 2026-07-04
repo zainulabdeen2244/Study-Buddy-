@@ -15,6 +15,9 @@ It is not a doctor, diagnosis tool, prescription tool, emergency tool, or indepe
 - Provider status, production gate, coverage, manifest, memory map, reindex plan, and premortem proof endpoints.
 - Optional LLM polishing through OpenAI or any OpenAI-compatible provider.
 
+  <img width="1672" height="941" alt="ChatGPT Image Jul 4, 2026, 10_22_57 AM" src="https://github.com/user-attachments/assets/ade28c0c-b60f-4640-aa59-b080bfdf6cf6" />
+
+
 ## Requirements
 
 Install these first:
